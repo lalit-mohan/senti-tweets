@@ -1,4 +1,5 @@
 import csv
+import pandas
 import tweepy
 from textblob import TextBlob
 
@@ -18,6 +19,8 @@ pub_tweets =api.search(search_string)
 tweet_l = []
 tweet_analysis = []
 
+df = pd.read_csv('tweets.csv',delimiter = ' ')
+print(df.head())
 
 with open('tweets.csv', 'w') as csvfile1:
 	writetweet = csv.writer(csvfile1, delimiter = ' ')
